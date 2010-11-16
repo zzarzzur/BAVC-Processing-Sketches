@@ -1,0 +1,4 @@
+void Explode() {
+  drawExplosion = true;
+}
+  
