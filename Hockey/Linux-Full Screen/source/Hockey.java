@@ -1,3 +1,22 @@
+import processing.core.*; 
+import processing.xml.*; 
+
+import java.applet.*; 
+import java.awt.Dimension; 
+import java.awt.Frame; 
+import java.awt.event.MouseEvent; 
+import java.awt.event.KeyEvent; 
+import java.awt.event.FocusEvent; 
+import java.awt.Image; 
+import java.io.*; 
+import java.net.*; 
+import java.text.*; 
+import java.util.*; 
+import java.util.zip.*; 
+import java.util.regex.*; 
+
+public class Hockey extends PApplet {
+
 int x1;
 int y1;
 int rx = width/2-50;
@@ -24,13 +43,13 @@ boolean Blue = false;
 int BlueC;
 
 
-void setup() {
+public void setup() {
   size(640, 480);
   smooth();
   font = loadFont( "Score.vlw" );
   textFont( font );
 }
-void draw() {
+public void draw() {
   
   x1 = mouseX;
   y1 = mouseY;
@@ -136,7 +155,7 @@ void draw() {
   
 
 }
-void button() {
+public void button() {
   if( x1 > 0 && x1 < (width/2)-25 && y1 > 0 && y1 < height ){
     stroke(0, 0, 255);
   strokeWeight(5);
@@ -158,7 +177,7 @@ void button() {
   println(rx + " " + ry);
 
 }
-void table(){
+public void table(){
 
 for(int o=0; o<700; o+=15) {
   for(int i=0; i<700; i+=15) {
@@ -184,7 +203,7 @@ for(int o=0; o<700; o+=15) {
   
 
 }
-void mousePressed() {
+public void mousePressed() {
     if ( y>=ry-50 && y<=(ry+50) && x>=(rx-50) && x<=rx+50 && xspeed>0) {
     yspeed = random(-25) - 50;
     xspeed = (xspeed + 50) * -1;
@@ -207,7 +226,7 @@ void mousePressed() {
     r = 64;
   }
 }
-void mouseDragged() {
+public void mouseDragged() {
     if ( y>=ry-50 && y<=(ry+50) && x>=(rx-50) && x<=rx+50 && xspeed>0) {
     yspeed = random(-25) - 50;
     xspeed = (xspeed + 50) * -1;
@@ -230,7 +249,7 @@ void mouseDragged() {
     r = 64;
   }
 }
-void keyPressed() {
+public void keyPressed() {
   if (key == 'c'){
   x = width/2;
   y = width/2;
@@ -243,3 +262,7 @@ void keyPressed() {
 
 
   
+  static public void main(String args[]) {
+    PApplet.main(new String[] { "--present", "--bgcolor=#666666", "--stop-color=#cccccc", "Hockey" });
+  }
+}
