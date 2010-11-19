@@ -133,23 +133,18 @@ public void draw() {
     text( rds,width/2-100, 50 );
     }
         if(x<25 && y>(height/2)-50 && y<(height/2)+50) {
-    
+    bs++;
     x = width/2;
     y = height/2;
-    Blue = true;
+    text( bds,width/2-100, 50 );
+    
     }
   
   stroke(0);
   strokeWeight(1);
   fill(175);
   ellipse(x,y,25,25);
-  if (Blue == true) {
-    BlueC++;
-  }
-  if (BlueC < 1500) {
-    text( bds,width/2-100, 50 );
-  }
-    
+
   
 
   
