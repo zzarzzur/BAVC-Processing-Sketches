@@ -1,2 +1,13 @@
 This Is Just A Basic Repo For My BAVC Proccessing Sketches
 	Use With Care =)
+
+These applications were created on Windows, which does not
+properly support setting files as "executable",
+a necessity for applications on Mac OS X.
+
+If A Mac Executable Was Included Follow These Steps
+
+Use the Terminal on Mac OS X, and from this
+directory, type the following:
+
+chmod +x <-The .App Folder->/Contents/MacOS/JavaApplicationStub
